@@ -1,4 +1,4 @@
-# epynox.xyz
+# Epynox.xyz
 
 Personal website to share my social networks
 Code by Maxence M
