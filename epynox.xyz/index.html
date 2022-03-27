@@ -1,0 +1,163 @@
+<html>
+    <script language=javascript>
+    var rev = "fwd";
+    function titlebar(val){
+        var msg  = "* epynox *";
+        var res = " ";
+        var speed = 100;
+        var pos = val;
+        msg = msg;
+        var le = msg.length;
+        if(rev == "fwd"){
+            if(pos < le){
+                pos = pos+1;
+                scroll = msg.substr(0,pos);
+                document.title = scroll;
+                timer = window.setTimeout("titlebar("+pos+")",speed);
+            }
+            else {
+                rev = "bwd";
+                timer = window.setTimeout("titlebar("+pos+")",speed);
+            }
+        }
+        else {
+            if(pos > 0) {
+                pos = pos-1;
+                var ale = le-pos;
+                scrol = msg.substr(ale,le);
+                document.title = scrol;
+                timer = window.setTimeout("titlebar("+pos+")",speed);
+            }
+            else {
+                rev = "fwd";
+                timer = window.setTimeout("titlebar("+pos+")",speed);
+            }
+        }
+    }
+    titlebar(0);
+</script>
+<script>
+    var collection=[];
+var loadedIndex=0;
+
+function init(audios) {
+  for(var i=0;i<audios.length;i++) {
+    var audio = new Audio(audios[i]);
+    collection.push(audio);
+    buffer(audio);
+  }
+}
+
+function buffer(audio) {
+  if(audio.readyState==4)return loaded();
+  setTimeout(function(){buffer(audio)},100);
+}
+
+function loaded() {
+  loadedIndex++;
+  if(collection.length==loadedIndex)playLooped();
+}
+function playLooped() {
+  var audio=Math.floor(Math.random() * (collection.length));
+  audio=collection[audio];
+  audio.play();
+  setTimeout(playLooped,audio.duration*1000);
+}
+init([
+  'static/bgs.mp3',
+  'static/bgr.mp3',
+  'static/bgz.mp3',
+  'static/bgy.mp3',
+    'static/bgs.mp3',
+  'static/bgr.mp3',
+  'static/bgz.mp3',
+  'static/bgy.mp3',
+    'static/bgs.mp3',
+  'static/bgr.mp3',
+  'static/bgz.mp3',
+  'static/bgy.mp3',
+    'static/bgs.mp3',
+  'static/bgr.mp3',
+  'static/bgz.mp3',
+  'static/bgy.mp3'
+]);
+    </script>
+
+<head>
+    <title>Epynox</title>
+    <script src="../ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="static/dark.css">
+    <audio id="music" src="static/bgsraw.html" autoplay loop onplaying="" style="display: none;"></audio>
+</head>
+<body>
+    <img src="../cdn.discordapp.com/attachments/925599348157468722/956275919989899304/ezgif.com-gif-maker.gif" id="videlol">
+    <div class="yes center">
+    <div class="center2"><span class="yes2">Epynox</span><span style="font-size: 24px; color: #5c5ea1;">#6969</span></div><br><hr class="good"><a>&nbsp;</a>
+    <a href="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ?&amp;enablejsapi=1&amp;autoplay=1&amp;mute=1"><img src="static/img/youtube.png" width="70" height="50" style=""></a><a>&nbsp;</a>
+    <a href="https://open.spotify.com/user/imck9dnczl0t8vrmezeccxvhw?si=774709e162f44abe"><img src="static/img/spotify.png" width="50" height="50" style=""></a><a>&nbsp;</a>
+    <a href="https://steamcommunity.com/id/Epynox/"><img src="static/img/steam.png" width="50" height="50" style=""></a>
+    </div>
+</body>
+
+</html>
+<script>
+
+neededkeys = [38,38,40,40,37,39,37,39,66,65], started = false, count = 0;
+$(document).keydown(function(e) {
+    key = e.keyCode;
+    if (!started) {
+        if (key == 38) {
+            started = true;
+        }
+    }
+    if (started) {
+        if (neededkeys[count] == key) {
+            count++;
+        } else {
+            reset();
+        }
+        if (count == 10) {
+            reset();
+            // Do your stuff here
+            window.location = 'https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ?&amp;enablejsapi=1&amp;autoplay=1&amp;mute=1';
+        }
+    } else {
+        reset();
+    }
+});
+function reset() {
+    started = false;
+    count = 0;
+}
+document.addEventListener('click', musicPlay);
+function musicPlay() {
+    document.getElementById('ID').play();
+    document.removeEventListener('click', musicPlay);
+}
+    </script>
+<style>
+@font-face {
+  font-family: mainfont;
+  src: url('static/junegull.ttf');
+}
+@font-face {
+  font-family: footerfont;
+  src: url('static/small_pixel-7.ttf');
+}
+@keyframes neinoften {
+    0% {
+        text-shadow: 0 0 0px #A0A4FF;
+    }
+    50% {
+        text-shadow: 0 0 10px #A0A4FF;
+    }
+    100% {
+        text-shadow: 0 0 0px #A0A4FF;
+    }
+}
+.yes2 {
+    animation: 0.7s neinoften infinite;
+}
+
+    </style>
+    
